@@ -63,20 +63,12 @@ class SimpleForm extends Component {
 
   render() {
     let {
-      username,
-      firstName,
-      creditCard,
-      mobile,
-      password,
-      confirmPassword,
-      gender,
-      date,
-      email
+      bp
     } = this.state;
     return (
       <div>
         <ValidatorForm
-          ref="form"
+          ref="Blood Pressure form"
           onSubmit={this.handleSubmit}
           onError={errors => null}
         >
@@ -84,134 +76,11 @@ class SimpleForm extends Component {
             <Grid item lg={6} md={6} sm={12} xs={12}>
               <TextValidator
                 className="mb-4 w-full"
-                label="Username (Min length 4, Max length 9)"
+                label="Blood Pressure (ex. 120/80)"
                 onChange={this.handleChange}
                 type="text"
-                name="username"
-                value={username}
-                validators={[
-                  "required",
-                  "minStringLength: 4",
-                  "maxStringLength: 9"
-                ]}
-                errorMessages={["this field is required"]}
-              />
-              <TextValidator
-                className="mb-4 w-full"
-                label="First Name"
-                onChange={this.handleChange}
-                type="text"
-                name="firstName"
-                value={firstName}
-                validators={["required"]}
-                errorMessages={["this field is required"]}
-              />
-              <TextValidator
-                className="mb-4 w-full"
-                label="Email"
-                onChange={this.handleChange}
-                type="email"
-                name="email"
-                value={email}
-                validators={["required", "isEmail"]}
-                errorMessages={["this field is required", "email is not valid"]}
-              />
-
-              <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                <KeyboardDatePicker
-                  className="mb-4 w-full"
-                  margin="none"
-                  id="mui-pickers-date"
-                  label="Date picker"
-                  inputVariant="standard"
-                  type="text"
-                  autoOk={true}
-                  value={date}
-                  onChange={this.handleDateChange}
-                  KeyboardButtonProps={{
-                    "aria-label": "change date"
-                  }}
-                />
-              </MuiPickersUtilsProvider>
-              <TextValidator
-                className="mb-8 w-full"
-                label="Credit Card"
-                onChange={this.handleChange}
-                type="number"
-                name="creditCard"
-                value={creditCard}
-                validators={[
-                  "required",
-                  "minStringLength:16",
-                  "maxStringLength: 16"
-                ]}
-                errorMessages={["this field is required"]}
-              />
-            </Grid>
-
-            <Grid item lg={6} md={6} sm={12} xs={12}>
-              <TextValidator
-                className="mb-4 w-full"
-                label="Mobile Nubmer"
-                onChange={this.handleChange}
-                type="text"
-                name="mobile"
-                value={mobile}
-                validators={["required"]}
-                errorMessages={["this field is required"]}
-              />
-              <TextValidator
-                className="mb-4 w-full"
-                label="Password"
-                onChange={this.handleChange}
-                name="password"
-                type="password"
-                value={password}
-                validators={["required"]}
-                errorMessages={["this field is required"]}
-              />
-              <TextValidator
-                className="mb-4 w-full"
-                label="Confirm Password"
-                onChange={this.handleChange}
-                name="confirmPassword"
-                type="password"
-                value={confirmPassword}
-                validators={["required", "isPasswordMatch"]}
-                errorMessages={[
-                  "this field is required",
-                  "password didn't match"
-                ]}
-              />
-              <RadioGroup
-                className="mb-4"
-                value={gender}
-                name="gender"
-                onChange={this.handleChange}
-                row
-              >
-                <FormControlLabel
-                  value="Male"
-                  control={<Radio color="secondary" />}
-                  label="Male"
-                  labelPlacement="end"
-                />
-                <FormControlLabel
-                  value="Female"
-                  control={<Radio color="secondary" />}
-                  label="Female"
-                  labelPlacement="end"
-                />
-                <FormControlLabel
-                  value="Others"
-                  control={<Radio color="secondary" />}
-                  label="Others"
-                  labelPlacement="end"
-                />
-              </RadioGroup>
-              <FormControlLabel
-                control={<Checkbox />}
-                label="I have read and agree to the terms of service."
+                name="Blood Pressure"
+                value={bp}
               />
             </Grid>
           </Grid>
