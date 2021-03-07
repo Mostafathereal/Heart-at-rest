@@ -12,11 +12,12 @@ import {
 } from "@material-ui/core";
 
 const RowCards = () => {
-  return [1, 2, 3, 4].map(id => (
+  const recom = ["", "Eat Less Salt", "Exercise for 30 mins a day"]
+  return [1, 2].map(id => (
     <Fragment key={id}>
       <Card className="py-2 px-4 project-card">
         <Grid container alignItems="center">
-          <Grid item md={5} xs={7}>
+          <Grid item md={6} xs={7}>
             <div className="flex items-center">
               <Checkbox />
               <Hidden smDown>
@@ -34,12 +35,12 @@ const RowCards = () => {
                 )}
               </Hidden>
               <span className="card__roject-name font-medium">
-                Project {id}
+                {recom[id]}
               </span>
             </div>
           </Grid>
 
-          <Grid item md={3} xs={4}>
+          <Grid item md={2} xs={4}>
             <div className="text-muted">
               {format(new Date().getTime(), "MM/dd/yyyy hh:mma")}
             </div>
