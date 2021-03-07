@@ -67,11 +67,13 @@ const StatCards = ({ classes }) => {
       <Grid item xs={12} md={6}>
         <Card className="play-card p-sm-24 bg-paper" elevation={6}>
           <div className="flex items-center">
-            <Icon className={classes.icon}>show_chart</Icon>
             <div className="ml-3">
               <small className="text-muted">Scoring</small>
-              <h6 className="m-0 mt-1 text-primary font-medium">{risk}</h6>
             </div>
+            <Icon className={classes.icon}>grade</Icon>
+            <Icon className={classes.icon}>grade</Icon>
+            <Icon className={classes.icon}>grade</Icon>
+            <Icon className={classes.icon}>grade</Icon>
           </div>
         </Card>
       </Grid>

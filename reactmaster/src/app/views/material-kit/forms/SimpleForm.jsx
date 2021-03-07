@@ -15,10 +15,12 @@ import {
 } from "@material-ui/pickers";
 import "date-fns";
 import DateFnsUtils from "@date-io/date-fns";
+import text from 'bp.txt'; // Relative path to your File
 
 class SimpleForm extends Component {
   state = {
-    bp: ""
+    bp: "",
+    bpFinal: ""
   };
 
   componentDidMount() {
@@ -37,11 +39,10 @@ class SimpleForm extends Component {
   }
 
   handleSubmit(){
-    console.log(this.state.b)
+    this.setState({bpFinal: this.bp.split("/")[0]})
   };
 
   handleChange(e){
-    // e = e.split("/")
     this.setState({ bp: e});
   };
 
@@ -64,7 +65,7 @@ class SimpleForm extends Component {
               <TextValidator
                 className="mb-4 w-full"
                 label="Blood Pressure (ex. 120/80)"
-                onChange={this.handleChange(this.value)}
+                onChange={(e) => this.handleChange(e)}
                 type="text"
                 name="Blood Pressure"
                 value={this.state.bp}
