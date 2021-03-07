@@ -20,19 +20,19 @@ def predict(features):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("age", metavar="", type=float)
-    parser.add_argument("sex", metavar="", type=float)
-    parser.add_argument("cp", metavar="", type=float)
-    parser.add_argument("trestbps", metavar="", type=float)
-    parser.add_argument("chol", metavar="", type=float)
-    parser.add_argument("fbs", metavar="", type=float)
-    parser.add_argument("restecg", metavar="", type=float)
-    parser.add_argument("thalach", metavar="", type=float)
-    parser.add_argument("exang", metavar="", type=float)
-    parser.add_argument("oldpeak", metavar="", type=float)
-    parser.add_argument("slope", metavar="", type=float)
-    parser.add_argument("ca", metavar="", type=float)
-    parser.add_argument("thal", metavar="", type=float)
+    parser.add_argument("--age", required=True, default=30.0, metavar="", type=float)
+    parser.add_argument("--sex", required=True, default=1.0, metavar="", type=float)
+    parser.add_argument("--cp", required=True, default=1, metavar="", type=float)
+    parser.add_argument("--trestbps", required=True, metavar="", type=float)
+    parser.add_argument("--chol", required=True, default=250, metavar="", type=float)
+    parser.add_argument("--fbs", required=True, default=0.0, metavar="", type=float)
+    parser.add_argument("--restecg", required=True, default=1.0, metavar="", type=float)
+    parser.add_argument("--thalach", required=True, default=150.0, metavar="", type=float)
+    parser.add_argument("--exang", required=True, default=0.0, metavar="", type=float)
+    parser.add_argument("--oldpeak", required=True, default=0.0, metavar="", type=float)
+    parser.add_argument("--slope", required=True, default=1.6, metavar="", type=float)
+    parser.add_argument("--ca", required=True, default=0, metavar="", type=float)
+    parser.add_argument("--thal", required=True, default=3, metavar="", type=float)
 
     args = parser.parse_args()
 
@@ -41,4 +41,4 @@ if __name__ == "__main__":
     predict(features)
 
 ###### SAMPLE USAGE ########
-# python3 predictor.py 0.2083 -1.0000 -1.0000 -0.8868 -0.4429 -1.0000 -1.0000 -0.2214 -1.0000 -0.6429  0.0000 -1.0000  0.3333
+# python3 predictor.py --age 0.2083 --sex -1.0000 --cp -1.0000 --trestbps -0.8868 --chol -0.4429 --fbs -1.0000 --restecg -1.0000 --thalach -0.2214 --exang -1.0000 --oldpeak -0.6429  --slope 0.0000 --ca -1.0000  --thal 0.3333
