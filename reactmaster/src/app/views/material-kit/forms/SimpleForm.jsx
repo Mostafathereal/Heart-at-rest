@@ -15,7 +15,6 @@ import {
 } from "@material-ui/pickers";
 import "date-fns";
 import DateFnsUtils from "@date-io/date-fns";
-import text from 'bp.txt'; // Relative path to your File
 
 class SimpleForm extends Component {
   state = {

@@ -96,7 +96,23 @@ tosetData(type){
     `
     border-bottom: 2px solid black;
     opacity: 1;
-  `}
+  `}`
+
+  const Tab2 = styled.button`
+padding: 10px 30px;
+cursor: pointer;
+opacity: 0.6;
+background: white;
+border: 0;
+outline: 0;
+border-bottom: 2px solid transparent;
+transition: ease border-bottom 250ms;
+${({ active }) =>
+  active &&
+  `
+  border-bottom: 2px solid white;
+  opacity: 1;
+`}
 `;
 
     return (
@@ -118,11 +134,24 @@ tosetData(type){
             ))}
           </div>
 
+          <div>
+            {["Download Data"].map((type) => (
+              <Tab2
+                key={type}
+                active={true}
+              >
+                {type}
+              </Tab2>
+            ))}
+          </div>
+
           <ModifiedAreaChart id="variable"
             height="280px"
             option={this.state.optionData}
           ></ModifiedAreaChart>
         </div>
+
+
 
         <div className="analytics m-sm-30 mt--18">
           <Grid container spacing={3}>
