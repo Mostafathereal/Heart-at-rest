@@ -2,7 +2,7 @@ import React from "react";
 
 const formsRoutes = [
   {
-    path: "/forms/basic",
+    path: "/forms/Blood Pressure",
     component: React.lazy(() => import("./BasicForm"))
   },
   {
