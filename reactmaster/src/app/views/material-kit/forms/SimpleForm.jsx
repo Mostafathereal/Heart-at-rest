@@ -39,11 +39,11 @@ class SimpleForm extends Component {
   }
 
   handleSubmit(){
-    this.setState({bpFinal: this.bp.split("/")[0]})
+    this.setState({bpFinal: this.state.bp.split("/")[0]})
   };
 
   handleChange(e){
-    this.setState({ bp: e});
+    this.setState({ bp: e.target.value});
   };
 
   handleDateChange = date => {
