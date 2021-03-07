@@ -18,16 +18,7 @@ import DateFnsUtils from "@date-io/date-fns";
 
 class SimpleForm extends Component {
   state = {
-    username: "",
-    firstName: "",
-    email: "",
-    date: new Date(),
-    creditCard: "",
-    mobile: "",
-    password: "",
-    confirmPassword: "",
-    gender: "",
-    agreement: ""
+    bp: ""
   };
 
   componentDidMount() {
@@ -45,14 +36,13 @@ class SimpleForm extends Component {
     ValidatorForm.removeValidationRule("isPasswordMatch");
   }
 
-  handleSubmit = event => {
-    // console.log("submitted");
-    // console.log(event);
+  handleSubmit(){
+    console.log(this.state.b)
   };
 
-  handleChange = event => {
-    event.persist();
-    this.setState({ [event.target.name]: event.target.value });
+  handleChange(e){
+    // e = e.split("/")
+    this.setState({ bp: e});
   };
 
   handleDateChange = date => {
@@ -62,9 +52,6 @@ class SimpleForm extends Component {
   };
 
   render() {
-    let {
-      bp
-    } = this.state;
     return (
       <div>
         <ValidatorForm
@@ -77,10 +64,10 @@ class SimpleForm extends Component {
               <TextValidator
                 className="mb-4 w-full"
                 label="Blood Pressure (ex. 120/80)"
-                onChange={this.handleChange}
+                onChange={this.handleChange(this.value)}
                 type="text"
                 name="Blood Pressure"
-                value={bp}
+                value={this.state.bp}
               />
             </Grid>
           </Grid>
