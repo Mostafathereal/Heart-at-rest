@@ -93,7 +93,7 @@ const StatCards = ({ classes }) => {
         <Card className="play-card p-sm-24 bg-paper" elevation={6}>
           <div className="flex items-center">
             <div className="ml-3">
-              <small className="text-muted">Scoring</small>
+              <small className="text-muted">Score</small>
             </div>
             <Icon className={classes.icon}>grade</Icon>
             <Icon className={classes.icon}>grade</Icon>
