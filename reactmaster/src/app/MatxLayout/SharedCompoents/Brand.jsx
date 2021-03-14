@@ -5,7 +5,7 @@ const Brand = ({ children }) => {
     <div className="flex items-center justify-between brand-area">
       <div className="flex items-center brand">
         <img src="/assets/images/logo.png" alt="company-logo" />
-        <span className="brand__text">Cardiac Arrest</span>
+        <span className="brand__text">Heart At Rest</span>
       </div>
       {children}
     </div>
